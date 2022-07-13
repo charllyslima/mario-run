@@ -12,7 +12,32 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
         <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/game-interactions.css" />
     </head>
-    <body></body>
+    <body>
+        <div class="game-board"></div>
+        <div class="controls">
+            <button>START</button>
+            <button class="hidden">RESTART</button>
+            <p class="sound-control">
+                <i class="fa-solid fa-volume-high"></i>
+            </p>
+        </div>
+        <div class="scores hidden">
+            <p class="high-score">HIGH SCORE: 0</p>
+            <p class="score">SCORE: 0</p>
+        </div>
+        <div class="sounds">
+            
+        </div>
+    </body>
 </html>
