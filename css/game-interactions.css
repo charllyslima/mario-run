@@ -6,9 +6,9 @@
 
 #mario {
     position: absolute;
-    bottom: 54px;
-    width: 150px;
-    height: 150px;
+    bottom: 57px;
+    /* width: 7%; */
+    height: 15%;
 }
 
 .entering-mario {
@@ -23,8 +23,8 @@
 .pipe-initial {
     position: absolute;
     bottom: 45px;
-    width: 200px;
-    height: 200px;
+    width: 10%;
+    height: 21%;
 }
 
 .jump {
@@ -55,9 +55,9 @@
 
 @keyframes mario-entering {
     from {
-        left: -200px;
+        left: -20%;
     }
     to {
-        left: 200px;
+        left: 10%;
     }
 }

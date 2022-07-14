@@ -33,7 +33,7 @@ const start = () => {
     setTimeout(() => {
         mario.classList.remove("hidden");
         mario.classList.add("entering-mario");
-        mario.style.left = "200px";
+        mario.style.left = "10%";
     }, 200);
 
     setTimeout(() => {
