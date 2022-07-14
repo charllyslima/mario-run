@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Mario Run</title>
 
-        <link rel="icon" href="./img/icon.png" />
+        <link rel="icon" href="./img/favicon.png" />
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,15 +25,13 @@
     </head>
     <body>
         <div class="game-board">
-            <div class="floor">
-
-            </div>
+            <div class="floor"></div>
         </div>
         <div class="controls">
-            <button id="start">START</button>
-            <button class="hidden" id="restart">RESTART</button>
+            <button id="start" class="blink">START</button>
+            <button id="restart" class="hidden blink">RESTART</button>
             <p class="sound-control">
-                <i class="fa-solid fa-volume-high"></i>
+                <button class="fa-solid fa-volume-xmark"></button>
             </p>
         </div>
         <div class="scores hidden">
@@ -41,7 +39,11 @@
             <p class="score">SCORE: 0</p>
         </div>
         <div class="sounds">
-            
+            <audio id="theme-song"
+            src="./sounds/theme_song.mp3"
+            id="background-sound" loop="loop"
+        ></audio>
         </div>
+        <script src="./js/script.js"></script>
     </body>
 </html>

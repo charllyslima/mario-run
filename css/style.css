@@ -64,16 +64,19 @@ button {
     cursor: pointer;
     overflow: hidden;
     outline: none;
-    animation: blink-animation 1s infinite linear;
 }
 
-button:active {
+.blink:active {
     position: relative;
     top: 2px;
 }
 
 .hidden {
     display: none;
+}
+
+.blink {
+    animation: blink-animation 1s infinite linear;
 }
 
 @keyframes blink-animation {
