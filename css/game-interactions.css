@@ -1,1 +1,63 @@
 /* file responsible for game interactions */
+
+:root {
+    --jumpSpeed: 250ms;
+}
+
+#mario {
+    position: absolute;
+    bottom: 54px;
+    width: 150px;
+    height: 150px;
+}
+
+.entering-mario {
+    animation: mario-entering 2s linear;
+}
+
+.entering-pipe {
+    animation: pipe-entering 2s 2 ease-out;
+    animation-direction: alternate;
+}
+
+.pipe-initial {
+    position: absolute;
+    bottom: 45px;
+    width: 200px;
+    height: 200px;
+}
+
+.jump {
+    animation: jump var(--jumpSpeed) 2 ease-out;
+    animation-direction: alternate;
+}
+
+.double-jump {
+}
+
+@keyframes jump {
+    from {
+        bottom: 54px;
+    }
+    to {
+        bottom: 200px;
+    }
+}
+
+@keyframes pipe-entering {
+    from {
+        left: -200px;
+    }
+    to {
+        left: 0px;
+    }
+}
+
+@keyframes mario-entering {
+    from {
+        left: -200px;
+    }
+    to {
+        left: 200px;
+    }
+}
