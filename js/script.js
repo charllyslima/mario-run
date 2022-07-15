@@ -8,8 +8,10 @@ const soundButton = document.querySelector(".sound-control");
 const themeAudio = document.querySelector("#theme-song");
 const pipeAudio = document.querySelector("#pipe-sound");
 const jumpAudio = document.querySelector("#jump-sound");
+const marioDieAudio = document.querySelector("#mario-die");
 
 const mario = document.querySelector("#mario");
+const yoshi = document.querySelector("#yoshi");
 const pipeStart = document.querySelector(".pipe-initial");
 const pipe = document.querySelector("#pipe");
 const scores = document.querySelector(".scores");
@@ -17,6 +19,7 @@ const scores = document.querySelector(".scores");
 const jumpSpeed = 250;
 
 let isStarted = false;
+let isLive = true;
 
 root.style.setProperty("--jumpSpeed", `${jumpSpeed}ms`);
 
@@ -57,17 +60,38 @@ const start = () => {
 };
 
 const runner = setInterval(() => {
-    const heightPipe = pipe.clientHeight;
-    const pipePosition = +window.getComputedStyle(pipe).left.replace("px", "");
+    const pipeHeight = pipe.clientHeight;
+    const pipeWidth = pipe.clientWidth;
+    const pipePositionX = +window.getComputedStyle(pipe).left.replace("px", "");
+    const pipePositionY = +window.getComputedStyle(pipe).bottom.replace("px", "");
 
     const marioPositionX = +window.getComputedStyle(mario).left.replace("px", "");
     const marioPositionY = +window.getComputedStyle(mario).bottom.replace("px", "");
-    const marioWidth = mario.clientWidth;
+    const marioWidth = mario.clientWidth - 10;
+    const marioHeight = mario.clientHeight - 10;
 
-    if (marioPositionY <= heightPipe && pipePosition <= marioPositionX && pipePosition > marioWidth + 25) {
-        //TODO loser the game
+    if (
+        pipePositionX - marioWidth <= marioPositionX &&
+        marioPositionY - marioHeight <= pipeHeight &&
+        marioPositionX <= pipePositionX
+    ) {
+        marioDieAudio.play();
+        pipe.style.animation = "none";
+        clearInterval(runner);
+        console.log("you lose");
+
+        pipe.style.left = `${pipePositionX - 10}px`;
+        mario.style.bottom = `${marioPositionY - 10}px`;
+        mario.src = "./img/mario-die.png";
+        yoshi.classList.remove("hidden");
+        setTimeout(() => {
+            yoshi.classList.add("hidden");
+        }, 4000);
+
+        isLive = false;
+
     }
-}, 1);
+}, 10);
 
 const actions = (e) => {
     if (isStarted) {

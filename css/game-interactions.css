@@ -7,9 +7,15 @@
 
 #mario {
     position: absolute;
-    bottom: 57px;
-    /* width: 7%; */
+    bottom: 60px;
     height: 15%;
+}
+
+#yoshi {
+    position: absolute;
+    bottom: 60px;
+    height: 15%;
+    animation: yoshi-run-animation 4s linear; 
 }
 
 .pipe {
@@ -67,6 +73,16 @@
     }
     to {
         left: 10%;
+    }
+}
+
+@keyframes yoshi-run-animation {
+    from {
+        left: 10%;
+    }
+    to {
+        left: 110%;
+        display: none;
     }
 }
 
